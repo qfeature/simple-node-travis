@@ -13,9 +13,12 @@ install:
 before_script:
   - echo "no tests"
 
+env:
+  - NAME=$NAME
+
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node-travis --build-arg NAME=$NAME .
+  - docker build -t simple-node-travis --build-arg NAME=${NAME} .
   - docker tag simple-node-travis qdockerfy/simple-node-travis:latest
 
 after_success:
