@@ -13,9 +13,6 @@ install:
 before_script:
   - echo "no tests"
 
-env:
-  - NAME=$NAME
-
 script:
   - docker --version # print the version for logging
   - docker build -t simple-node-travis --build-arg NAME=${NAME} .
