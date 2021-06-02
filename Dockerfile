@@ -2,7 +2,7 @@
 FROM node:13
 
 # Had to add this in order for docker image to pick up
-# the environment variable set from Travis build.
+# the environment variable from Travis build.
 ARG NAME
 ENV NAME=$NAME
 
